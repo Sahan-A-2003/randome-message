@@ -1,3 +1,4 @@
+settime = () =>{
 const randomeNumber = Math.floor(Math.random() * 10);
 const message = {
   greeding : ['good morning', 'good night', 'good eveing'],
@@ -51,6 +52,19 @@ genarateMeassage = () => {
     
   }
 }
-
-
 genarateMeassage();
+}
+
+let stratTime = new Date().getTime()
+
+let displayMessages = setInterval( () => {
+  let currantTime = new Date() .getTime();
+  if(currantTime - stratTime > 30000){
+    clearInterval(displayMessages);
+      return;
+  } 
+
+  settime();
+
+},4000)
+
